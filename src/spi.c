@@ -32,7 +32,7 @@ int spi_write(uint8_t b){
     
 }
 
-ISR(TCB0_INT_vect) {
+ISR(SPI0_INT_vect) {
 
     
     PORTC.OUTSET = PIN2_bm;
