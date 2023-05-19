@@ -1,6 +1,6 @@
 #include "uart.h"
 #include "timer.h"
-
+#include "spi.c"
 /***
  * Tutorial 09: Introduction
  *
@@ -44,6 +44,8 @@ int main(void) {
      * via the UART interface. The string you print should begin with a leading 'n'
      * and should be terminated with a newline character '\n';
      */
+
+    uart_puts('n11079606\n')
 
 
     // Write your code for Ex 9.1 above this line
