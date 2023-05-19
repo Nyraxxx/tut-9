@@ -17,10 +17,11 @@ void uart_putc(uint8_t c) {
     while (!(USART0.STATUS & USART_DREIF_bm));  // Wait for TXDATA empty
     USART0.TXDATAL = c;
 }
+
 void uart_puts(char* string){
     const char *ptr = string;
-    while(*ptr != '/n'){
-        putchar(*ptr);
+    while(*ptr != '\n'){
+        uart_putc(*ptr);
         ptr++;
     }
 }

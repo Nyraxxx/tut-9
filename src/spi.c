@@ -1,7 +1,7 @@
 #include "uart.h"
 #include "timer.h"
 
-spi_init(void){
+void spi_init(void){
     cli();
     PORTMUX.SPIROUTEA = PORTMUX_SPI0_ALT1_gc;
     PORTC.DIR |= (PIN0_bm | PIN2_bm);
@@ -19,8 +19,8 @@ spi_init(void){
   
 }
 
-spi_write(uint8_t b){
+void spi_write(uint8_t b){
     SPI0.DATA = b;
     ///interrupt??
-    
+
 }

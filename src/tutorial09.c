@@ -1,6 +1,6 @@
 #include "uart.h"
 #include "timer.h"
-#include "spi.c"
+#include "spi.h"
 /***
  * Tutorial 09: Introduction
  *
@@ -45,7 +45,7 @@ int main(void) {
      * and should be terminated with a newline character '\n';
      */
 
-    uart_puts('n11079606\n')
+    uart_puts("n11079606\n");
 
 
     // Write your code for Ex 9.1 above this line
