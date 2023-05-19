@@ -20,7 +20,7 @@ void uart_putc(uint8_t c) {
 
 void uart_puts(char* string){
     const char *ptr = string;
-    while(*ptr != '\n'){
+    while(*ptr != '\0'){
         uart_putc(*ptr);
         ptr++;
     }
