@@ -33,10 +33,11 @@ int spi_write(uint8_t b){
 }
 
 ISR(SPI0_INT_vect) {
+    PORTA.OUTCLR = PIN1_bm;
+    PORTA.OUTSET = PIN1_bm;
 
-    
     PORTC.OUTSET = PIN2_bm;
-        TCB0.INTFLAGS = TCB_CAPT_bm;
+    SPI0.INTFLAGS |= SPI_RXCIF_bm;
 
         
         

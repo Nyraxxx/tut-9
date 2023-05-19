@@ -14,13 +14,13 @@ volatile int showLHS = 0;
 
 ISR(TCB0_INT_vect) {
 
-    TCB0.INTFLAGS = TCB_CAPT_bm;
+    
 
-    static int  six = 10010000;
+    static int  six = 0b10010000;
     // ABCDEG
 
 
-    static int zero = 00001000;
+    static int zero = 0b00001000;
     //ABCDEF
 
     if (showLHS == 0){
@@ -32,5 +32,5 @@ ISR(TCB0_INT_vect) {
     }
 
     
-
+    TCB0.INTFLAGS = TCB_CAPT_bm;
 }
