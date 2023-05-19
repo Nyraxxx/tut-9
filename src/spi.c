@@ -15,12 +15,19 @@ void spi_init(void){
     PORTB.DIRSET = PIN5_bm;
     PORTA.DIRSET = PIN1_bm;
     PORTC.DIRSET = PIN0_bm;
-    PORTC.DIRSET = PIN2_bm;;
+    PORTC.DIRSET = PIN2_bm;
   
+  //latch stuff
+
+    PORTA.OUTCLR = PIN1_bm;
+    PORTC.OUTCLR = PIN0_bm;
+    PORTC.OUTCLR = PIN2_bm;
+
 }
 
-void spi_write(uint8_t b){
+voidspi_write(uint8_t b){
     SPI0.DATA = b;
     ///interrupt??
 
+PORTC.OUTSET = PIN2_bm;
 }
