@@ -25,9 +25,19 @@ void spi_init(void){
 
 }
 
-voidspi_write(uint8_t b){
+int spi_write(uint8_t b){
     SPI0.DATA = b;
     ///interrupt??
-
-PORTC.OUTSET = PIN2_bm;
+    
+    
 }
+
+ISR(TCB0_INT_vect) {
+
+    
+    PORTC.OUTSET = PIN2_bm;
+        TCB0.INTFLAGS = TCB_CAPT_bm;
+
+        
+        
+    }

@@ -80,8 +80,8 @@ int main(void) {
      * should be blank after this code executes.
      */
 
-    //spi_init();       // Initialise SPI
-    //spi_write(0xFF);  // Clear display
+    spi_init();       // Initialise SPI
+    spi_write(0xFF);  // Clear display
 
     // Uncomment the lines above once you have completed Ex 9.2
 
@@ -131,7 +131,9 @@ int main(void) {
      * Write code below that will call timer_init() only after the character 'a'
      * has been received via the UART interface.
      */ 
-
+    if (uart_getc() == 'a'){
+        timer_init();
+    }
 
     //Write your code for Ex 9.4 above this line
 

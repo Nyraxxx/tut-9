@@ -9,8 +9,28 @@ void timer_init() {
     TCB0.CTRLA = TCB_ENABLE_bm;         // Enable
     sei(); 
 }
+//06
+volatile int showLHS = 0;
 
 ISR(TCB0_INT_vect) {
 
     TCB0.INTFLAGS = TCB_CAPT_bm;
+
+    static int  six = 10010000;
+    // ABCDEG
+
+
+    static int zero = 00001000;
+    //ABCDEF
+
+    if (showLHS == 0){
+            spi_write(six);
+            showLHS = 1;
+    }else{
+            spi_write(zero);
+            showLHS = 0;
+    }
+
+    
+
 }
