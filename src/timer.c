@@ -17,18 +17,18 @@ ISR(TCB0_INT_vect) {
 
     
 
-    static int  six = 0b10010000;
+    static int  one1 = 0b01101011;
     // ABCDEG
 
 
-    static int zero = 0b00001000;
+    static int one = 0b11101011;
     //ABCDEF
 
     if (showLHS == 0){
-            spi_write(six);
+            spi_write(one1);
             showLHS = 1;
     }else{
-            spi_write(zero);
+            spi_write(one);
             showLHS = 0;
     }
 
