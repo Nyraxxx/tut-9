@@ -131,9 +131,12 @@ int main(void) {
      * Write code below that will call timer_init() only after the character 'a'
      * has been received via the UART interface.
      */ 
-    if (uart_getc() == 'a'){
-        timer_init();
+
+    while(uart_getc() != 'a'){
+
     }
+    timer_init();
+  
 
     //Write your code for Ex 9.4 above this line
 

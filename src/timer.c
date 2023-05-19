@@ -1,5 +1,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "spi.h"
 
 void timer_init() {
     cli();
